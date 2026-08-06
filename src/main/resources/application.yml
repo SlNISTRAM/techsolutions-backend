@@ -1,0 +1,15 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: techsolutions-backend
+  security:
+    user:
+      name: admin
+      password: admin123
+
+logging:
+  level:
+    com.techsolutions: DEBUG
+    org.springframework.security: INFO
