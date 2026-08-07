@@ -8,10 +8,10 @@ Sistema Backend desarrollado en **Java 17** y **Spring Boot 3.2.5** para la empr
 
 | # | Nombre | Apellido | GitHub |
 |---|---|---|---|
-| 1 | Gino | Llanes | [@GinoLlanes](https://github.com/GinoLlanes) |
+| 1 | Gino | Llanes | [@ginopaololl](https://github.com/ginopaololl) |
 | 2 | Erick | Sumari | [@ErickSumari](https://github.com/ErickSumari) |
-| 3 | Esteffen | Medina | [@EsteffenMedina](https://github.com/EsteffenMedina) |
-| 4 | Yecson | Domador | [@YecsonDomador](https://github.com/YecsonDomador) |
+| 3 | Esteffen | Medina | [@SlNISTRAM](https://github.com/SlNISTRAM) |
+| 4 | Yecson | Domador | [@yecsonDomadorC10](https://github.com/yecsonDomadorC10) |
 | 5 | Lucio | Calderón | [@LucioCalderon](https://github.com/LucioCalderon) |
 
 > **Curso:** Patrones de Diseño de Software — IDAT
