@@ -2,6 +2,7 @@ package com.techsolutions.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -72,6 +73,8 @@ public class SecurityConfig {
                 .requestMatchers("/api/payments/**").hasRole("ADMIN")
                 .requestMatchers("/api/reports/**").authenticated()
                 .requestMatchers("/api/inventory/**").hasAnyRole("ADMIN", "GERENTE")
+                // RF10: solo el administrador puede seleccionar/cambiar la estrategia de precios activa
+                .requestMatchers(HttpMethod.PUT, "/api/pricing/strategies/**").hasRole("ADMIN")
                 .requestMatchers("/api/pricing/**").authenticated()
                 .requestMatchers("/api/orders/**").hasAnyRole("ADMIN", "GERENTE", "VENDEDOR", "CONTADOR")
                 .requestMatchers("/api/catalog/**").permitAll()

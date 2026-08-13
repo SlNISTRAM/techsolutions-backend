@@ -6,16 +6,16 @@ Sistema Backend desarrollado en **Java 17** y **Spring Boot 3.2.5** para la empr
 
 ## 👥 Integrantes del Equipo
 
-| # | Nombre | Apellido | GitHub |
-|---|---|---|---|
-| 1 | Gino | Llanes | [@ginopaololl](https://github.com/ginopaololl) |
-| 2 | Erick | Sumari | [@ErickSumari](https://github.com/ErickSumari) |
-| 3 | Esteffen | Medina | [@SlNISTRAM](https://github.com/SlNISTRAM) |
+| # | Nombre | Apellido | GitHub                                                   |
+|---|---|---|----------------------------------------------------------|
+| 1 | Gino | Llanes | [@ginopaololl](https://github.com/ginopaololl)           |
+| 2 | Erick | Sumari | [@ErickSumari](https://github.com/ErickSumari)           |
+| 3 | Esteffen | Medina | [@SlNISTRAM](https://github.com/SlNISTRAM)               |
 | 4 | Yecson | Domador | [@yecsonDomadorC10](https://github.com/yecsonDomadorC10) |
-| 5 | Lucio | Calderón | [@LucioCalderon](https://github.com/LucioCalderon) |
+| 5 | Lucio | Calderón | [@LucioCalderon](https://github.com/LCalderonCa)         |
 
 > **Curso:** Patrones de Diseño de Software — IDAT
-> **Docente:** [Nombre del docente]
+> **Docente:** Marco Tulio Ortiz Alfaro
 > **Repositorio colaborativo:** Trabajo en equipo con historial de commits distribuidos por cada integrante.
 
 ---
@@ -38,7 +38,7 @@ Sistema Backend desarrollado en **Java 17** y **Spring Boot 3.2.5** para la empr
 Este proyecto implementa **6 patrones de diseño** (2 Estructurales y 4 de Comportamiento) estructurados bajo principios de diseño de software de alta calidad (**GRASP**):
 
 ### 1. Patrones Estructurales
-* **Adapter (`com.techsolutions.adapter`)**: Interfaz unificada `PaymentAdapter` e implementaciones concretas para las pasarelas **PayPal**, **Yape** (BCP) y **Plin**. Incluye el servicio `PaymentAdapterService` para la activación/desactivación dinámica de adaptadores.
+* **Adapter (`com.techsolutions.adapter`)**: Interfaz unificada `PaymentAdapter` e implementaciones concretas para las pasarelas **PayPal**, **Yape** (BCP) y **Plin**. Cada adaptador traduce hacia un SDK externo simulado con interfaz incompatible (`com.techsolutions.adapter.gateway`: `PayPalGateway`, `YapeGateway`, `PlinGateway`), cada uno con su propia forma de request/response. Incluye el servicio `PaymentAdapterService` para la activación/desactivación dinámica de adaptadores.
 * **Proxy (`com.techsolutions.proxy`)**: Protección de acceso mediante `ReportServiceProxy`. Intercepta las peticiones a los reportes financieros de `RealReportService`, restringiendo el acceso exclusivamente a los roles `'GERENTE'` y `'CONTADOR'`.
 
 ### 2. Patrones de Comportamiento
@@ -68,7 +68,7 @@ Este proyecto implementa **6 patrones de diseño** (2 Estructurales y 4 de Compo
 
 ### 1. Clonar el Repositorio
 ```bash
-git clone https://github.com/tu-usuario/techsolutions-backend.git
+git clone https://github.com/SlNISTRAM/techsolutions-backend.git
 cd "SISTEMA Patrones de Diseño de Software"
 ```
 
@@ -101,7 +101,7 @@ El sistema cuenta con 4 usuarios preconfigurados en memoria para validar las reg
 
 | Usuario | Contraseña | Rol Asignado | Permisos en la API |
 |---|---|---|---|
-| `admin` | `admin123` | `ROLE_ADMIN` | Gestión de adaptadores de pago (`/api/payments/**`) e inventario. |
+| `admin` | `admin123` | `ROLE_ADMIN` | Gestión de adaptadores de pago (`/api/payments/**`), inventario, y única cuenta habilitada para cambiar la estrategia de precios activa (`PUT /api/pricing/strategies/{name}`). |
 | `gerente` | `gerente123` | `ROLE_GERENTE` | Ver reportes financieros, alertas de stock e inventario. |
 | `contador` | `contador123` | `ROLE_CONTADOR` | Acceso a reportes financieros (`/api/reports/**`). |
 | `vendedor` | `vendedor123` | `ROLE_VENDEDOR` | Operaciones de catálogo y precios (Sin acceso a reportes). |
@@ -182,7 +182,7 @@ Para publicar el proyecto en un repositorio remoto de GitHub, ejecutar los sigui
 # 1. Crear el repositorio en GitHub (web) y copiar la URL HTTPS o SSH
 
 # 2. Vincular el remoto
-git remote add origin https://github.com/tu-usuario/techsolutions-backend.git
+git remote add origin https://github.com/SlNISTRAM/techsolutions-backend.git
 
 # 3. Renombrar la rama principal a main
 git branch -M main
